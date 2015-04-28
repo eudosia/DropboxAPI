@@ -254,13 +254,26 @@ End
 		  // WORK AROUND DUE TO HTMLVIEWER NOT ABLE TO RETURN THE CORRECT REDIRECTED URL
 		  // IT WILL HOWEVER RETURN THE CORRECT REDIRECTED URL BUT ONLY AFTER THE FOLLOWING JS PAGE RELOAD
 		  // THEN THE DOCUMENTCOMPLETE EVENT'S URL SEES THE CORRECT REDIRECT URL
-		  if siteCounter >= 1 Then
-		    Me.ExecuteJavaScript("location.reload();")
-		    AuthCompleteCanvas.Visible = True
-		    
-		  Else
-		    siteCounter = siteCounter + 1
-		  end if
+		  Static mTitle as String 
+  
+  		if siteCounter >=1  and mTitle <> newTitle Then
+    
+    		Me.ExecuteJavaScript("location.reload();")
+    		//THIS IS A WORKAROUND TO LOAD THE CONFIRMATION PAGE WHEN YOU ACCESS THE FIRST TIME
+    		//WITH YOUR DROPBOX APP. USE FACEBOOK.COM IS MANDATORY IN THIS CASE BECAUSE IS OUR 
+    		//CALLBACK URL
+    		if instr(0,newTitle,"Facebook") > 0  then
+      			Me.ExecuteJavaScript("location.reload();")
+      			AuthCompleteCanvas.Visible = True
+    		end if
+    
+ 		Else
+    		siteCounter = siteCounter + 1
+  		end if
+  
+  
+  
+  mTitle = newTitle
 		  
 		  
 		  
