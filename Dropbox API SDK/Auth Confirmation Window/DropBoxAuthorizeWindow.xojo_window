@@ -165,7 +165,7 @@ End
 		  
 		  Dim Dropbox_Auth_URL as String = DropBox_Authorization_Base_URL + ClientID + ResponseType + RedirectURI
 		  HTMLViewer1.LoadURL(Dropbox_Auth_URL)
-		  
+		  //google RedirectURI doesn't work anymore, use https://www.facebook.com instead
 		  //"https://www.dropbox.com/1/oauth2/authorize?client_id=1l8g9qrlnuxynio&response_type=code&redirect_uri=https://www.google.com")
 		  
 		  

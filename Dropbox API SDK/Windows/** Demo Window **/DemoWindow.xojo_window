@@ -239,7 +239,7 @@ Begin Window DemoWindow
          TabIndex        =   11
          TabPanelIndex   =   0
          TabStop         =   True
-         Text            =   "https://www.google.com"
+         Text            =   "https://www.facebook.com"
          TextColor       =   &c00000000
          TextFont        =   "System"
          TextSize        =   12.0
